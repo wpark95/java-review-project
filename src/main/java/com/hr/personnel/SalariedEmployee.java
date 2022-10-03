@@ -21,6 +21,11 @@ public class SalariedEmployee extends Employee {
   }
 
   @Override
+  public double computeMonthlyTaxToPay() {
+    return computeMonthlyCompensation() * SALARIED_TAX_RATE;
+  }
+
+  @Override
   public String getEmployeeInfo() {
     return "name = " + getName() + ", "
         + "hireDate = " + getHireDate() + ", "

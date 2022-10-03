@@ -29,12 +29,10 @@ public class Department {
     return numberOfEmployeesWhoWorked;
   }
 
-  // Compute total monthly compensation of all
-  // employees in that department
   public double computeDepartmentMonthlyTotalCompensation() {
     double monthlyTotalCompensation = 0.0;
 
-    for (Employee employee: employees) {
+    for (Employee employee : employees) {
       monthlyTotalCompensation += employee.computeMonthlyCompensation();
     }
 

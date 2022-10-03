@@ -40,8 +40,8 @@ public class HRClient {
     System.out.println("number of employees who worked = " +
         numberOfEmployeesWhoWorked);
 
-    double monthlyTotalCompensation = department.computeDepartmentMonthlyTotalCompensation();
-    System.out.println("monthly total compensation = " + monthlyTotalCompensation);
+    System.out.println(
+        "monthly total compensation = " + department.computeDepartmentMonthlyTotalCompensation());
   }
 
 }
