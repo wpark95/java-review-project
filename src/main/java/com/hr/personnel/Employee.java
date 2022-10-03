@@ -2,8 +2,7 @@ package com.hr.personnel;
 
 import java.time.LocalDate;
 
-public class Employee {
-
+public abstract class Employee {
     private String name;
     private LocalDate hireDate;
 
@@ -15,28 +14,35 @@ public class Employee {
         this.hireDate = hireDate;
     }
 
-    public String getEmployeeInfo() {
-        return "name = " + name + ", hireDate = " + hireDate;
+    public abstract double computeMonthlyCompensation();
+
+    public int computeNumberOfYearsWorkedSinceHired() {
+        int hireDateYear = hireDate.getYear();
+        int todayYear = LocalDate.now().getYear();
+        int yearsWorked = todayYear - hireDateYear;
+        return yearsWorked;
     }
+
+    public abstract String getEmployeeInfo();
 
     public String work() {
         return name + " worked";
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setHireDate(LocalDate hireDate) {
-        this.hireDate = hireDate;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public LocalDate getHireDate() {
         return hireDate;
+    }
+
+    public void setHireDate(LocalDate hireDate) {
+        this.hireDate = hireDate;
     }
 
 }
